@@ -22,13 +22,13 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel border-0" id="navbar">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <!-- {{ config('app.name', 'Laravel') }} -->
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon" id="hamburger"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -87,37 +87,71 @@
     color: white !important;
     }
 
-    #signBtn, #loginBtn {
-        background-color: #1d8da4;  
-        border-color: #1d8da4;  
+    #navbar {
+        background-color:#c17e70;
+        border-color: #c17e70;
+    }
+
+    /* .navbar-toggler-icon  {
+        border-color:#c17e70 !important;
+    } */
+
+    #signBtn, #loginBtn, #rgstrButton {
+        background-color: #3d5367;  
+        border-color: #3d5367;  
     }
 
     #body, html {
-        background-color: white;
+        background-color: #c17e70;
+        border-color:#c17e70;
     }
 
     #card, #header {
-        background-color: white;
-        border-color: white;
+        background-color: #c17e70;
+        border-color: #c17e70;
         
     }
 
-    #email, #password {
-        background-color: #fee7e2;
-        border-color: #fee7e2;
+    #registerBody, center {
+        background-color: #c17e70;
+        border-color: !important;
 
-      
+    }
+
+    #signUpRegister {
+        background-color: #c17e70;
+        border-color: !important;
+        font-family: 'GlacialIndifferenceRegular'; 
+
+
+    }
+
+    #email, #password {
+        background-color: #fffdef;
+        border-color: #fffdef;
+     }
+
+    #confirm, #name {
+        background-color: #fffdef;
+        border-color: #fffdef;
+    }
+
+    #nameLabel, #emailLabel, #passwordLabel, #confirmLabel, .nav-link {
+        color:#fffdef !important;
+        font-weight:bold;
     }
 
     #forgot, #signUp, #or {
         font-size: 12px;
+        color:#fff9e9;
     }
 
     #plog {
         font-family: 'GlacialIndifferenceRegular'; 
         font-weight: bold; 
         font-style: normal; 
-        color: #e2725b;
+        font-size: 50px;
+        color: #fffdef;
     }
 
 

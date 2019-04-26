@@ -2,14 +2,15 @@
 
 @section('content')
 <div class="container" id="loginBody">
+<!-- <br><br>
+<center><h1 id="plog">P L O G</h1></center> -->
 
-<!-- <center><h1 id="plog">P L O G</h1></center> -->
 
 <div class="card-header" id='header'>
 <div class="row justify-content-center">
         <div class="col-md-8">
         <br><br>
-            <center><img src="/img/logo.png"></center>
+            <center><img src="/img/plog2.png"></center>
 
             </div>
             </div>
