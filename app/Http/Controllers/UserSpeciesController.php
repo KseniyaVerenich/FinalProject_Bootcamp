@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Species;
+use App\UserSpecies;
 use Illuminate\Http\Request;
 
-class SpeciesController extends Controller
+class UserSpeciesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class SpeciesController extends Controller
      */
     public function index()
     {
-        $species = Species::all();
-
-        return view ('species.index', compact('species'));
+        
+        return view ('UserSpecies.index', compact('user_species'));
     }
 
     /**
@@ -43,10 +42,10 @@ class SpeciesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Species  $species
+     * @param  \App\UserSpecies  $userSpecies
      * @return \Illuminate\Http\Response
      */
-    public function show(Species $species)
+    public function show(UserSpecies $userSpecies)
     {
         //
     }
@@ -54,10 +53,10 @@ class SpeciesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Species  $species
+     * @param  \App\UserSpecies  $userSpecies
      * @return \Illuminate\Http\Response
      */
-    public function edit(Species $species)
+    public function edit(UserSpecies $userSpecies)
     {
         //
     }
@@ -66,10 +65,10 @@ class SpeciesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Species  $species
+     * @param  \App\UserSpecies  $userSpecies
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Species $species)
+    public function update(Request $request, UserSpecies $userSpecies)
     {
         //
     }
@@ -77,10 +76,10 @@ class SpeciesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Species  $species
+     * @param  \App\UserSpecies  $userSpecies
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Species $species)
+    public function destroy(UserSpecies $userSpecies)
     {
         //
     }

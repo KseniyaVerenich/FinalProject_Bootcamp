@@ -61,6 +61,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a class="dropdown-item" href=""> My Plants</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -96,9 +97,10 @@
         border-color:#c17e70 !important;
     } */
 
-    #signBtn, #loginBtn, #rgstrButton {
+    #signBtn, #loginBtn, #rgstrButton, #choosePlant {
         background-color: #3d5367;  
         border-color: #3d5367;  
+        text-decoration: none !important;
     }
 
     #body, html {
@@ -106,9 +108,11 @@
         border-color:#c17e70;
     }
 
-    #card, #header {
+    #card, #header, #pickPlant {
         background-color: #c17e70;
         border-color: #c17e70;
+        font-family: 'GlacialIndifferenceRegular'; 
+        color:#fffdef;
         
     }
 
