@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Species;
 use Illuminate\Http\Request;
+use Auth;
 
 class SpeciesController extends Controller
 {
@@ -16,6 +17,7 @@ class SpeciesController extends Controller
     {
         $species = Species::all();
 
+        // return json_encode ($species);
         return view ('species.index', compact('species'));
     }
 
@@ -46,9 +48,10 @@ class SpeciesController extends Controller
      * @param  \App\Species  $species
      * @return \Illuminate\Http\Response
      */
-    public function show(Species $species)
-    {
-        //
+    public function show($id)
+    {   
+        $species = Species::findOrFail($id);
+        return view('species.create', compact('species'));
     }
 
     /**
@@ -84,4 +87,6 @@ class SpeciesController extends Controller
     {
         //
     }
+
+    
 }

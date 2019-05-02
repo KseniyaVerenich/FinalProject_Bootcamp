@@ -15,11 +15,20 @@
                     @endif
 
                     <center><img src="/img/myPlants.png"></center>
-                    <br>
-                    <center><a> You don't have any plants yet! </a></center>
-                    <br>
+                    
+                    <my-plants></my-plants>
+                   
+
+
+
+
+
+
+
+                    
+
                     <button id="choosePlant" type="submit" class="btn btn-primary btn-block" style="text-decoration:none;"><a href="/species">
-                    Choose a Plant!</a>
+                    Add New Plant!</a>
                     </button>
 
                     

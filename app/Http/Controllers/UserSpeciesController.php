@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\UserSpecies;
 use Illuminate\Http\Request;
+use Auth;
 
 class UserSpeciesController extends Controller
 {
@@ -14,8 +15,11 @@ class UserSpeciesController extends Controller
      */
     public function index()
     {
+       
+        $us = UserSpecies::all();
+
+        return json_encode ($us);
         
-        return view ('UserSpecies.index', compact('user_species'));
     }
 
     /**
@@ -23,9 +27,17 @@ class UserSpeciesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($user_id, $species_id, $name)
     {
-        //
+        $us =  new UserSpecies();
+
+        $us->user_id = $user_id;
+        $us->species_id =  $species_id;
+        $us->name = $name;
+
+        $us->save();
+
+        // $us= UserSpecies::all();
     }
 
     /**
@@ -36,7 +48,17 @@ class UserSpeciesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $us =  new UserSpecies();
+
+        $params = $request->all();
+
+        $us->user_id = $request->input('userid');
+        $us->species_id = $request->input('speciesid');
+        $us->name = $request->input('plantName');
+        
+        $us->save();
+
+        // return $response->json([$request->all()]);
     }
 
     /**
