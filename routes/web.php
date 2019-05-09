@@ -27,6 +27,10 @@ Route::resource('species', 'SpeciesController');
 
 Route::get('/species/{id}', 'SpeciesController@show'); 
 
+Route::get('species/{id}/care' , 'SpeciesController@care');
+
+
+
 // Route::resource('user_species', 'UserSpeciesController');
 
 

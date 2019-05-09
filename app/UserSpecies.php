@@ -17,4 +17,17 @@ class UserSpecies extends Model
     protected $fillable = [
         'name', 'photo',
     ];
+
+    public function user() 
+    {
+        return $this->belongsTo(User::class);
+    }
+    
+    public function species () 
+    {
+        return $this->belongsTo('App\Species', 'species_id', 'id');
+    }
 }
+
+
+

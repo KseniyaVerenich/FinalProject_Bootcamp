@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -103,6 +104,11 @@
         text-decoration: none !important;
     }
 
+    #trash {
+        background-color: #c17e70 !important;
+        border-color:  #c17e70 !important;
+    }
+
     #body, html {
         background-color: #c17e70;
         border-color:#c17e70;
@@ -138,6 +144,10 @@
     #confirm, #name {
         background-color: #fffdef;
         border-color: #fffdef;
+    }
+
+    #nickName {
+        font-size: 20px;
     }
 
     #nameLabel, #emailLabel, #passwordLabel, #confirmLabel, .nav-link {

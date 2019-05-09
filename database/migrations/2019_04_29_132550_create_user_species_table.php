@@ -19,7 +19,10 @@ class CreateUserSpeciesTable extends Migration
             $table->string('species_id');
             $table->string('name');
             $table->binary('photo')->nullable();
+            $table->dateTime('date_water')->nullable();
             $table->timestamps();
+           
+           
         });
     }
 

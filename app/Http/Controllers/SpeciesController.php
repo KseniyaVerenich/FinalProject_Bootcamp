@@ -21,6 +21,15 @@ class SpeciesController extends Controller
         return view ('species.index', compact('species'));
     }
 
+
+    public function display()
+    {
+        $species = Species::all();
+
+        return json_encode ($species);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -39,7 +48,7 @@ class SpeciesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
     /**
@@ -53,6 +62,14 @@ class SpeciesController extends Controller
         $species = Species::findOrFail($id);
         return view('species.create', compact('species'));
     }
+
+    public function care($id) 
+    {
+        $species = Species::findOrFail($id);
+        return view('species.care', compact('species'));
+
+    }
+
 
     /**
      * Show the form for editing the specified resource.

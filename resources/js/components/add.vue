@@ -2,9 +2,13 @@
   <div>
     <h1>And also this stuff!</h1>
 
-   
- <form action="/api/myplants" method='POST' name="addYourPlant" id="addYourPlant" acceptCharset="UTF-8">
- 
+    <form
+      action="/api/myplants"
+      method="POST"
+      name="addYourPlant"
+      id="addYourPlant"
+      accept-charset="UTF-8"
+    >
       <div>
         <input
           type="text"
@@ -16,13 +20,18 @@
       </div>
 
       <div>
-        <input type="button" value="ADD PLANT" class="btn btn-info btn-block" @click="yourPlant()">
+        <a href="/home">
+          <input
+            type="button"
+            value="ADD PLANT"
+            class="btn btn-info btn-block"
+            @click="yourPlant()"
+          >
+        </a>
         <input type="hidden" :value="speciesid" name="speciesid">
         <input type="hidden" :value="userid" name="userid">
       </div>
-    </form> 
-
-
+    </form>
   </div>
 </template>
 
@@ -30,12 +39,12 @@
 export default {
   data() {
     return {
-      name: ''
+      name: ""
     };
   },
 
   props: {
-    speciesid:{
+    speciesid: {
       type: Number
     },
     userid: {
@@ -44,21 +53,17 @@ export default {
   },
 
   mounted() {
-    console.log('component mounted');
+    console.log("component mounted");
   },
 
   methods: {
     yourPlant() {
-      const form = document.getElementById('addYourPlant');
+      const form = document.getElementById("addYourPlant");
 
       const formData = new FormData(form);
-      formData.append('title', 'The frustration with post request');
+      formData.append("title", "The frustration with post request");
       console.log(formData);
-      axios
-      .post('/api/myplants', formData)
-      .then(response => response.data);
-      
-      
+      axios.post("/api/myplants", formData).then(response => response.data);
     }
   }
 };

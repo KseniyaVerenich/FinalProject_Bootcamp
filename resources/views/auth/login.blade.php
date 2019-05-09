@@ -10,7 +10,7 @@
 <div class="row justify-content-center">
         <div class="col-md-8">
         <br><br>
-            <center><img src="/img/plog2.png"></center>
+            <center><img src="/img/plog3.png"></center>
 
             </div>
             </div>

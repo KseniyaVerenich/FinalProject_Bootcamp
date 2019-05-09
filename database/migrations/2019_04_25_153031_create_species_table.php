@@ -21,6 +21,9 @@ class CreateSpeciesTable extends Migration
             $table->string('description');
             $table->string('watering');
             $table->string('light');
+            $table->string('days');
+            $table->timestamps();
+           
            
         });
     }
