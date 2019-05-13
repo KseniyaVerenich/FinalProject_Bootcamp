@@ -1904,6 +1904,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2093,8 +2099,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         self.compareTime(obj);
         console.log("final countdownnnn");
       }, 1000 * 60);
+    },
+    getPicture: function getPicture(obj) {
+      //console.log(obj);
+      return obj.species.photo;
     }
-  }
+  },
+  computed: {}
 });
 
 /***/ }),
@@ -2108,6 +2119,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -38258,143 +38271,176 @@ var render = function() {
           _vm._v(" "),
           _vm._l(_vm.plants, function(plant) {
             return _c("div", { key: plant.id, staticClass: "container" }, [
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "flex-column align-items-center",
-                    attrs: { id: "nickName" }
+              _c(
+                "div",
+                {
+                  staticClass: "row",
+                  staticStyle: {
+                    "margin-right": "-0px",
+                    "margin-left": "-20px",
+                    "flex-grow": "1"
                   },
-                  [_vm._v(_vm._s(plant.name))]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col text-right" }, [
+                  attrs: { id: "firstRow" }
+                },
+                [
                   _c(
-                    "button",
+                    "div",
                     {
-                      staticClass: "btn btn-info",
-                      attrs: { type: "submit", value: "DELETE", id: "trash" },
-                      on: {
-                        click: function($event) {
-                          return _vm.deletePlant(plant.id)
-                        }
-                      }
+                      staticClass: "col",
+                      staticStyle: { "padding-left": "0px" }
                     },
                     [
-                      _c(
-                        "svg",
-                        {
+                      _c("div", { staticClass: "float-left" }, [
+                        _c("img", {
                           attrs: {
-                            id: "i-trash",
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 32 32",
-                            width: "32",
-                            height: "32",
-                            fill: "none",
-                            stroke: "currentcolor",
-                            "stroke-linecap": "round",
-                            "stroke-linejoin": "round",
-                            "stroke-width": "2"
+                            src: _vm.getPicture(plant),
+                            width: "75",
+                            height: "75"
                           }
+                        })
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "flex column", attrs: { id: "nickName" } },
+                    [
+                      _c("a", [_vm._v(_vm._s(plant.name))]),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticStyle: { color: "#6c3a2f" },
+                          attrs: { id: "daysLeft" }
                         },
                         [
-                          _c("path", {
-                            attrs: {
-                              d:
-                                "M28 6 L6 6 8 30 24 30 26 6 4 6 M16 12 L16 24 M21 12 L20 24 M11 12 L12 24 M12 6 L13 2 19 2 20 6"
-                            }
-                          })
+                          _vm._v(
+                            _vm._s(plant.daysLeft) + " days until i'm thirsty!"
+                          )
                         ]
                       )
                     ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col" }, [
-                  _c(
-                    "form",
-                    {
-                      attrs: {
-                        action: "/api/myplants/",
-                        method: "POST",
-                        name: "addYourPlant",
-                        id: "addYourPlant",
-                        "accept-charset": "UTF-8"
-                      }
-                    },
-                    [
-                      _c("div", [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.lastWater,
-                              expression: "lastWater"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "hidden",
-                            name: "lastWater",
-                            placeholder: "name your plant"
-                          },
-                          domProps: { value: _vm.lastWater },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.lastWater = $event.target.value
-                            }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("a", { attrs: { href: "/home" } }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-info",
-                              attrs: { type: "button", value: "ADD PLANT" },
-                              on: {
-                                click: function($event) {
-                                  return _vm.yourPlant(plant)
-                                }
-                              }
-                            },
-                            [
-                              _c("ion-icon", {
-                                attrs: { ios: "ios-water", name: "ios-water" }
-                              })
-                            ],
-                            1
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col" }, [
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-2" }, [
                     _c(
-                      "div",
-                      { staticClass: "flex-column align-items-center" },
+                      "form",
+                      {
+                        attrs: {
+                          action: "/api/myplants/",
+                          method: "POST",
+                          name: "addYourPlant",
+                          id: "addYourPlant",
+                          "accept-charset": "UTF-8"
+                        }
+                      },
                       [
-                        _vm._v(
-                          _vm._s(plant.daysLeft) + " days until more water!"
+                        _c("div", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.lastWater,
+                                expression: "lastWater"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "hidden",
+                              name: "lastWater",
+                              placeholder: "name your plant"
+                            },
+                            domProps: { value: _vm.lastWater },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.lastWater = $event.target.value
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("a", { attrs: { href: "/home" } }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn",
+                                attrs: {
+                                  type: "button",
+                                  value: "Plant Watered"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.yourPlant(plant)
+                                  }
+                                }
+                              },
+                              [
+                                _c("ion-icon", {
+                                  attrs: { size: "large", name: "ios-water" }
+                                })
+                              ],
+                              1
+                            )
+                          ])
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-1" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-info",
+                        attrs: { type: "submit", value: "DELETE", id: "trash" },
+                        on: {
+                          click: function($event) {
+                            return _vm.deletePlant(plant.id)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            attrs: {
+                              id: "i-close",
+                              xmlns: "http://www.w3.org/2000/svg",
+                              viewBox: "0 0 29 29",
+                              width: "20",
+                              height: "20",
+                              fill: "none",
+                              stroke: "#914c3d",
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              "stroke-width": "2"
+                            }
+                          },
+                          [
+                            _c("path", {
+                              attrs: { d: "M2 30 L30 2 M30 30 L2 2" }
+                            })
+                          ]
                         )
                       ]
                     )
                   ])
-                ]),
-                _vm._v(" "),
-                _c("br")
-              ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("br")
             ])
-          })
+          }),
+          _vm._v(" "),
+          _c("br")
         ],
         2
       )
@@ -38423,8 +38469,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", [_vm._v("And also this stuff!")]),
-    _vm._v(" "),
     _c(
       "form",
       {
@@ -38451,7 +38495,7 @@ var render = function() {
             attrs: {
               type: "text",
               name: "plantName",
-              placeholder: "name your plant"
+              placeholder: "NAME YOUR PLANT"
             },
             domProps: { value: _vm.name },
             on: {
@@ -38465,11 +38509,13 @@ var render = function() {
           })
         ]),
         _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
         _c("div", [
           _c("a", { attrs: { href: "/home" } }, [
             _c("input", {
               staticClass: "btn btn-info btn-block",
-              attrs: { type: "button", value: "ADD PLANT" },
+              attrs: { type: "button", value: "ADD YOUR PLANT", id: "nameBtn" },
               on: {
                 click: function($event) {
                   return _vm.yourPlant()

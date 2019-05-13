@@ -1,42 +1,27 @@
 <template>
   <div v-if="dataReady">
     <br>
+
     <div class="container" v-for="plant in plants" :key="plant.id">
-      <div class="row">
-        <div class="flex-column align-items-center" id="nickName">{{plant.name}}</div>
+      <div class="row" id="firstRow" style="margin-right:-0px; margin-left:-20px; flex-grow: 1;">
+       
+        <div class="col" style="padding-left: 0px;">
+           <div class="float-left">
+          
+            <img :src="getPicture(plant)" width="75" height="75">
+          </div>
+        </div>
 
-        <!-- DELETE FORM AND BUTTON -->
-
-        <div class="col text-right">
-          <button
-            type="submit"
-            value="DELETE"
-            id="trash"
-            class="btn btn-info"
-            @click="deletePlant(plant.id)"
-          >
-            <svg
-              id="i-trash"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 32 32"
-              width="32"
-              height="32"
-              fill="none"
-              stroke="currentcolor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-            >
-              <path
-                d="M28 6 L6 6 8 30 24 30 26 6 4 6 M16 12 L16 24 M21 12 L20 24 M11 12 L12 24 M12 6 L13 2 19 2 20 6"
-              ></path>
-            </svg>
-          </button>
+        <div class="flex column"  id="nickName">
+          <a>{{plant.name}}</a>
+          <br>
+          <a id="daysLeft" style="color: #6c3a2f; ">{{plant.daysLeft}} days until i'm thirsty!</a>
         </div>
 
         <!-- TIME AND COUNTDOWN FORM/BUTTON -->
 
-        <div class="col">
+        <div class="col-2">
+          <!-- <div class="float-right"> -->
           <form
             action="/api/myplants/"
             method="POST"
@@ -56,33 +41,54 @@
 
             <div>
               <a href="/home">
-                <button
-                  type="button"
-                  value="ADD PLANT"
-                  class="btn btn-info"
-                  @click="yourPlant(plant)"
-                >
-                  <ion-icon ios="ios-water" name="ios-water"></ion-icon>
+                <button type="button" value="Plant Watered" class="btn" @click="yourPlant(plant)">
+                  <ion-icon size="large" name="ios-water"></ion-icon>
                 </button>
               </a>
             </div>
           </form>
+          <!-- </div> -->
         </div>
 
-        <div class="row">
-          <div class="col">
-            <div class="flex-column align-items-center">{{plant.daysLeft}} days until more water!</div>
-          </div>
+        <!-- DELETE FORM AND BUTTON -->
+
+        <div class="col-1">
+          <!-- <div class="float-right"> -->
+          <button
+            type="submit"
+            value="DELETE"
+            id="trash"
+            class="btn btn-info"
+            @click="deletePlant(plant.id)"
+          >
+            <svg
+              id="i-close"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 29 29"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="#914c3d"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <path d="M2 30 L30 2 M30 30 L2 2"></path>
+            </svg>
+          </button>
         </div>
-        <!-- 
+        <!-- </div> -->
+      </div>
+      <br>
+    </div>
+
+    <!-- 
       <div class='container' v-for="item in species">
         {{item.common}}
 
-        </div>-->
+    </div>-->
 
-        <br>
-      </div>
-    </div>
+    <br>
   </div>
 </template>
 
@@ -229,8 +235,15 @@ export default {
         self.compareTime(obj);
         console.log("final countdownnnn");
       }, 1000 * 60);
+    },
+
+    getPicture(obj) {
+      //console.log(obj);
+      return obj.species.photo;
     }
-  }
+  },
+
+  computed: {}
 };
 </script>
 

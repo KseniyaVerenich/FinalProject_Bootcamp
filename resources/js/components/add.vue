@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>And also this stuff!</h1>
+    
 
     <form
       action="/api/myplants"
@@ -13,17 +13,19 @@
         <input
           type="text"
           v-model="name"
+         
           name="plantName"
-          placeholder="name your plant"
+          placeholder="NAME YOUR PLANT"
           class="form-control"
         >
       </div>
-
+      <br>
       <div>
         <a href="/home">
           <input
             type="button"
-            value="ADD PLANT"
+            value="ADD YOUR PLANT"
+             id="nameBtn"
             class="btn btn-info btn-block"
             @click="yourPlant()"
           >
