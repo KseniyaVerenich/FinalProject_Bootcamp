@@ -31,7 +31,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('species', 'SpeciesController');
 
-//Route::get('/species', 'SpeciesController@display');
+Route::get('/species', 'SpeciesController@display');
 
 Route::get('/species/{id}', 'SpeciesController@show'); 
 
