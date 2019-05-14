@@ -12,7 +12,6 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{secure_asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -24,7 +23,6 @@
     <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{secure_asset('css/app.css') }}" rel="stylesheet">
 </head>
 
