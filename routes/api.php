@@ -19,8 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Auth::routes();
 
-Route::resource('/myplants', 'UserSpeciesController');
-
 Route::patch ('/myplants/{id}', 'UserSpeciesController@update');
 
 Route::get('/species', 'SpeciesController@display');

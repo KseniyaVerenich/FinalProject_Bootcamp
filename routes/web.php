@@ -35,7 +35,7 @@ Route::get('/species/{id}', 'SpeciesController@show');
 
 Route::get('species/{id}/care' , 'SpeciesController@care');
 
-
+Route::resource('/api/myplants', 'UserSpeciesController');
 
 // Route::resource('user_species', 'UserSpeciesController');
 

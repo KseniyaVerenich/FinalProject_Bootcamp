@@ -1,19 +1,20 @@
 <template>
   <div v-if="dataReady">
     <br>
+    <!-- DISPLAYS USER PLANTS BY ID  -->
 
     <div class="container" v-for="plant in plants" :key="plant.id">
       <div class="row" id="firstRow" style="margin-right:-0px; margin-left:-20px; flex-grow: 1;">
-       
         <div class="col" style="padding-left: 0px;">
-           <div class="float-left">
-          
-            <img :src="getPicture(plant)" width="75" height="75">
+          <div class="float-left">
+            <img :src="getPicture(plant)">
           </div>
         </div>
 
-        <div class="flex column"  id="nickName">
-          <a>{{plant.name}}</a>
+        <div class="flex column" id="nickName">
+          <a :href="careLink(plant.species.id)" style="color: #fffdef; text-decoration: none;">
+            <span style="font-family: 'Nunito', sans-serif;">{{plant.name}}</span>
+          </a>
           <br>
           <a id="daysLeft" style="color: #6c3a2f; ">{{plant.daysLeft}} days until i'm thirsty!</a>
         </div>
@@ -61,33 +62,27 @@
             class="btn btn-info"
             @click="deletePlant(plant.id)"
           >
-            <svg
-              id="i-close"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 29 29"
-              width="20"
-              height="20"
-              fill="none"
-              stroke="#914c3d"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-            >
-              <path d="M2 30 L30 2 M30 30 L2 2"></path>
-            </svg>
+            <a href="/home" style="text-decoration:none;">
+              <svg
+                id="i-close"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 29 29"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="#914c3d"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              >
+                <path d="M2 30 L30 2 M30 30 L2 2"></path>
+              </svg>
+            </a>
           </button>
         </div>
-        <!-- </div> -->
       </div>
       <br>
     </div>
-
-    <!-- 
-      <div class='container' v-for="item in species">
-        {{item.common}}
-
-    </div>-->
-
     <br>
   </div>
 </template>
@@ -102,7 +97,6 @@ export default {
       lastWater: "",
       daysUntil: null,
       dataReady: false
-      //for each plant, save the days left
     };
   },
 
@@ -143,23 +137,10 @@ export default {
     }
   },
 
-  mounted() {
-    var i = 0;
-    // while (!this.dataReady) {
-    //   i++;
-    //   if (i == 5000) {
-    //     break;
-    //   }
-    //   console.log("waiting");
-    // }
-    // console.log('about to hit loop', this.plants);
-    // // loop thru my plant list
-    // for (var i in this.plants) {
-    //   console.log("line 120", this.plants[i].id);
-    //   this.compareTime(this.plants[i]);
-    //   this.countdown(this.plants[i]);
-    // }
-  },
+  // mounted() {
+  //   var i = 0;
+
+  // },
 
   methods: {
     pad(n) {
@@ -240,6 +221,9 @@ export default {
     getPicture(obj) {
       //console.log(obj);
       return obj.species.photo;
+    },
+    careLink(id) {
+      return "/species/" + id + "/care";
     }
   },
 

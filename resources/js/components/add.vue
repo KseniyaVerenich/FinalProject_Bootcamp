@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+    <!-- FORM AND INPUT TO ADD NAME AND PLANT TO USER LIST -->
 
     <form
       action="/api/myplants"
@@ -13,7 +13,6 @@
         <input
           type="text"
           v-model="name"
-         
           name="plantName"
           placeholder="NAME YOUR PLANT"
           class="form-control"
@@ -25,7 +24,7 @@
           <input
             type="button"
             value="ADD YOUR PLANT"
-             id="nameBtn"
+            id="nameBtn"
             class="btn btn-info btn-block"
             @click="yourPlant()"
           >

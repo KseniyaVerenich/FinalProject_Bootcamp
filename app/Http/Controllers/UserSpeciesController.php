@@ -8,15 +8,20 @@ use Auth;
 
 class UserSpeciesController extends Controller
 {
+
+    public function __construct()
+    {
+        //$this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-       
-        $us = UserSpecies::with('species')->get();
+        $user = $request->user();
+        $us = UserSpecies::where("user_id", $user->id)->with('species')->get();
             //  leftjoin('species', 'us.species_id', '=', 'species.id')
             //  ->select('species.id', 'species.days', 'us.id', 'us.user_id', 'us.species_id', 'us.name', 'us.date_water')  
             //  ->get();

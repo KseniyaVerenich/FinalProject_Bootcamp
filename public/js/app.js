@@ -1905,11 +1905,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1918,8 +1913,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       update: [],
       lastWater: "",
       daysUntil: null,
-      dataReady: false //for each plant, save the days left
-
+      dataReady: false
     };
   },
   created: function () {
@@ -2009,22 +2003,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     return created;
   }(),
-  mounted: function mounted() {
-    var i = 0; // while (!this.dataReady) {
-    //   i++;
-    //   if (i == 5000) {
-    //     break;
-    //   }
-    //   console.log("waiting");
-    // }
-    // console.log('about to hit loop', this.plants);
-    // // loop thru my plant list
-    // for (var i in this.plants) {
-    //   console.log("line 120", this.plants[i].id);
-    //   this.compareTime(this.plants[i]);
-    //   this.countdown(this.plants[i]);
-    // }
-  },
+  // mounted() {
+  //   var i = 0;
+  // },
   methods: {
     pad: function pad(n) {
       console.log(n);
@@ -2103,6 +2084,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     getPicture: function getPicture(obj) {
       //console.log(obj);
       return obj.species.photo;
+    },
+    careLink: function careLink(id) {
+      return "/species/" + id + "/care";
     }
   },
   computed: {}
@@ -2119,7 +2103,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -38291,13 +38274,7 @@ var render = function() {
                     },
                     [
                       _c("div", { staticClass: "float-left" }, [
-                        _c("img", {
-                          attrs: {
-                            src: _vm.getPicture(plant),
-                            width: "75",
-                            height: "75"
-                          }
-                        })
+                        _c("img", { attrs: { src: _vm.getPicture(plant) } })
                       ])
                     ]
                   ),
@@ -38306,7 +38283,27 @@ var render = function() {
                     "div",
                     { staticClass: "flex column", attrs: { id: "nickName" } },
                     [
-                      _c("a", [_vm._v(_vm._s(plant.name))]),
+                      _c(
+                        "a",
+                        {
+                          staticStyle: {
+                            color: "#fffdef",
+                            "text-decoration": "none"
+                          },
+                          attrs: { href: _vm.careLink(plant.species.id) }
+                        },
+                        [
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-family": "'Nunito', sans-serif"
+                              }
+                            },
+                            [_vm._v(_vm._s(plant.name))]
+                          )
+                        ]
+                      ),
                       _vm._v(" "),
                       _c("br"),
                       _vm._v(" "),
@@ -38409,25 +38406,34 @@ var render = function() {
                       },
                       [
                         _c(
-                          "svg",
+                          "a",
                           {
-                            attrs: {
-                              id: "i-close",
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 29 29",
-                              width: "20",
-                              height: "20",
-                              fill: "none",
-                              stroke: "#914c3d",
-                              "stroke-linecap": "round",
-                              "stroke-linejoin": "round",
-                              "stroke-width": "2"
-                            }
+                            staticStyle: { "text-decoration": "none" },
+                            attrs: { href: "/home" }
                           },
                           [
-                            _c("path", {
-                              attrs: { d: "M2 30 L30 2 M30 30 L2 2" }
-                            })
+                            _c(
+                              "svg",
+                              {
+                                attrs: {
+                                  id: "i-close",
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  viewBox: "0 0 29 29",
+                                  width: "20",
+                                  height: "20",
+                                  fill: "none",
+                                  stroke: "#914c3d",
+                                  "stroke-linecap": "round",
+                                  "stroke-linejoin": "round",
+                                  "stroke-width": "2"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  attrs: { d: "M2 30 L30 2 M30 30 L2 2" }
+                                })
+                              ]
+                            )
                           ]
                         )
                       ]

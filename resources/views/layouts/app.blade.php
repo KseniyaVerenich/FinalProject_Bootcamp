@@ -18,6 +18,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Domine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -279,7 +282,7 @@
         
         border-color: black;
         padding-right: 0px; 
-        font-size:19px;
+        font-size:20px;
     }
 
     #nameLabel,

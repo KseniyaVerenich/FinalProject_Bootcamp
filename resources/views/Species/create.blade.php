@@ -10,17 +10,17 @@
         </svg>
     </a>
 
-    <br><br><br><br>
+    <br><br><br>
 
     <div>
-        <center><img src="{{$species->photo}}"></center>
+        <center><img src="{{$species->photo}}" width="auto" height="150"></center>
         <br>
         <center>
-            <h4 style="font-size:30px; color:#fffdef; font-family: 'GlacialIndifferenceRegular';">{{$species->common}}
+            <h4 style="font-size:30px; color:#fffdef; font-family: 'Nunito', sans-serif;">{{$species->common}}
             </h4>
         </center>
         <center>
-            <h5 style="font-style:italic; font-size:25px; color:#fffdef; font-family: 'GlacialIndifferenceRegular';">
+            <h5 style="font-style:italic; font-size:25px; color:#fffdef; font-family: 'Alegreya', serif;">
                 {{$species->latin}}</h5>
         </center>
 
