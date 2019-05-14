@@ -243,7 +243,7 @@
         border-color: #c17e70;
         font-family: 'GlacialIndifferenceRegular';
         color: #fffdef;
-        
+
 
     }
 
@@ -279,10 +279,10 @@
     }
 
     #nickName {
-        
+
         border-color: black;
-        padding-right: 0px; 
-        font-size:20px;
+        padding-right: 0px;
+        font-size: 20px;
     }
 
     #nameLabel,
@@ -335,7 +335,7 @@
             width: auto;
         }
 
-        #calltoaction{
+        #calltoaction {
             margin-top: 28vh;
             height: 40vh;
             width: auto;

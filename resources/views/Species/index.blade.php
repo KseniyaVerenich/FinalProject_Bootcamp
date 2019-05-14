@@ -43,9 +43,7 @@
     </div>
   </div>
 
-  {{-- <li>{{$item->description}}</li>
-  <li>{{$item->watering}}</li>
-  <li>{{$item->light}}</li> --}}
+
   @endforeach
 
 
