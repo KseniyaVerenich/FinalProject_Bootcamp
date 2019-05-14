@@ -13,6 +13,7 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{secure_asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
