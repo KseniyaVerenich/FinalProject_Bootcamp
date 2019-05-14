@@ -315,7 +315,7 @@
         display: none;
     }
 
-    @media only screen and (min-width : 700px) {
+    @media only screen and (min-width : 1224px) {
         #app {
             display: none;
         }
