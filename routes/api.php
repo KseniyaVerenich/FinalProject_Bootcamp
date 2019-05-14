@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Auth::routes();
+
+Route::patch ('/myplants/{id}', 'UserSpeciesController@update');
+
+Route::get('/species', 'SpeciesController@display');
+
+Route::get('/speciesdebug', 'UserSpeciesController@index');
+
