@@ -118,7 +118,7 @@ export default {
     }
     try {
       await axios
-        .get("/api/species")
+        .get("/api/s")
         .then(response => (this.species = response.data));
     } catch (err) {
       console.log(err);

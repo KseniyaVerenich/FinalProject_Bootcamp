@@ -1953,7 +1953,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             case 9:
               _context.prev = 9;
               _context.next = 12;
-              return axios.get("/api/species").then(function (response) {
+              return axios.get("/api/s").then(function (response) {
                 return _this.species = response.data;
               });
 
