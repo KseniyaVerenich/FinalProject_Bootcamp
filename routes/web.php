@@ -27,6 +27,8 @@ Route::get('/logout', function () {
 
 Auth::routes();
 
+Route::get('/s', 'SpeciesController@index');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/species/{id}', 'SpeciesController@show'); 

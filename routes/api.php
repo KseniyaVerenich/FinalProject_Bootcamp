@@ -22,8 +22,6 @@ Auth::routes();
 
 Route::resource('/species', 'SpeciesController');
 
-Route::get('/s', 'SpeciesController@display');
-
 Route::patch ('/myplants/{id}', 'UserSpeciesController@update');
 
 Route::get('/speciesdebug', 'UserSpeciesController@index');

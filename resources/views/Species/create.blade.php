@@ -3,7 +3,7 @@
 @section('content')
 <div class='container'>
     <br>
-    <a href="/species" id="backBtn" style="color: #fffdef; text-decoration: none;">
+    <a href="javascript:history.back();" id="backBtn" style="color: #fffdef; text-decoration: none;">
         <svg id="i-chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"
             fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
             <path d="M20 30 L8 16 20 2" />

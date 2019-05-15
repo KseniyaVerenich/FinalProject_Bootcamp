@@ -1953,48 +1953,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             case 9:
               _context.prev = 9;
               _context.next = 12;
-              return axios.get("/api/s").then(function (response) {
+              return axios.get("/api/species").then(function (response) {
                 return _this.species = response.data;
               });
 
             case 12:
-              _context.next = 17;
+              this.dataReady = true;
+              _context.next = 18;
               break;
 
-            case 14:
-              _context.prev = 14;
+            case 15:
+              _context.prev = 15;
               _context.t1 = _context["catch"](9);
               console.log(_context.t1);
 
-            case 17:
-              _context.prev = 17;
-              _context.next = 20;
-              return axios.get("/api/myplants/{id}").then(function (response) {
-                return _this.update = response.data;
-              });
-
-            case 20:
-              _context.next = 25;
-              break;
-
-            case 22:
-              _context.prev = 22;
-              _context.t2 = _context["catch"](17);
-              console.log(_context.t2);
-
-            case 25:
-              _context.prev = 25;
-              this.dataReady = true; //for loop for each plant
-              //    run the compare time function on each plant id
-
-              return _context.finish(25);
-
-            case 28:
+            case 18:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, this, [[1, 6], [9, 14], [17, 22, 25, 28]]);
+      }, _callee, this, [[1, 6], [9, 15]]);
     }));
 
     function created() {

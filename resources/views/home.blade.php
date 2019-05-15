@@ -20,7 +20,7 @@
                     
                     <button id="choosePlant" type="submit" class="btn btn-primary btn-block"
                         style="text-decoration:none;">
-                        <a href="/species" id="choosePlant">
+                        <a href="/s" id="choosePlant">
                             ADD A PLANT
                         </a>
                     </button>

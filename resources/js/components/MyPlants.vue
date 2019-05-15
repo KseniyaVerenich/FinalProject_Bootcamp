@@ -118,22 +118,11 @@ export default {
     }
     try {
       await axios
-        .get("/api/s")
+        .get("/api/species")
         .then(response => (this.species = response.data));
+        this.dataReady = true;
     } catch (err) {
       console.log(err);
-    }
-    try {
-      await axios
-        .get("/api/myplants/{id}")
-        .then(response => (this.update = response.data));
-    } catch (err) {
-      console.log(err);
-    } finally {
-      this.dataReady = true;
-
-      //for loop for each plant
-      //    run the compare time function on each plant id
     }
   },
 
