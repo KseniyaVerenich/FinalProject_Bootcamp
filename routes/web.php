@@ -27,15 +27,15 @@ Route::get('/logout', function () {
 
 Auth::routes();
 
-Route::get('/s', 'SpeciesController@index');
+Route::get('s', 'SpeciesController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 
-Route::get('/species/{id}', 'SpeciesController@show'); 
+Route::get('species/{id}', 'SpeciesController@show'); 
 
-Route::get('/species/{id}/care' , 'SpeciesController@care');
+Route::get('species/{id}/care' , 'SpeciesController@care');
 
-Route::resource('/api/myplants', 'UserSpeciesController');
+Route::resource('api/myplants', 'UserSpeciesController');
 
 // Route::resource('user_species', 'UserSpeciesController');
 
