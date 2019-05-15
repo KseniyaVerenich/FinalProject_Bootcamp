@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Auth::routes();
 
 
-Route::get('/species', 'SpeciesController@display');
+Route::get('species', 'SpeciesController@display')->name('species');
 
 Route::patch ('myplants/{id}', 'UserSpeciesController@update');
 

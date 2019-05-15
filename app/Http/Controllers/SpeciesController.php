@@ -18,7 +18,7 @@ class SpeciesController extends Controller
         $species = Species::all();
 
         // return json_encode ($species);
-        return view ('species/index', compact('species'));
+        return view ('species.index', compact('species'));
     }
 
 
